@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind普通写法 -->
+        <img v-bind:src="imgURL" alt="">
+        <!-- 语法糖写法 --> <br>
+        <a :href="aHref">百度一下</a>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                imgURL:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F110e3901b5edc526d699b03bc37e9b9f2f7a997b.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643086430&t=4247c07e87057a6e1526965f1070f37a',
+                aHref:'https://www.baidu.com'
+            },
+            methods: {}
+        });
+    </script>
+</body>
+</html>

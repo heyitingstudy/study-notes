@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in letters" :key='item'>{{item}}</li>
+        </ul>
+        <button @click="btnClick">按钮</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                letters:['a','b','c','d']
+            },
+            methods: {
+                btnClick(){
+                    // 1.push方法:在数组最后面添加元素（可同时添加多个）
+                    // this.letters.push('aaa')
+                    //this.letters.push('aaa','bbb','ccc')
+
+                    //2.pop()：删除数组中的最后一个元素
+                    //this.letters.pop()
+
+                    //3.shift()；删除数组中的第一个元素
+                    // this.letters.shift()
+
+                    // 4.unshift()：在数组最前面添加元素（可同时添加多个）
+                    //this.letters.unshift('aaa')
+                    // this.letters.unshift('aaa','bbb','ccc')
+
+                    // 5.splice作用：删除元素/替换元素/插入元素
+                    // 删除元素：splice(开始位置,删除几个元素)
+                    //如果第二个参数没传，就删除后面所有元素
+                    // this.letters.splice(1,2)
+                    // this.letters.splice(1)
+                    // 替换元素：splice(开始位置,替换几个元素,用于替换前面的元素)
+                    // this.letters.splice(2,3,'e','f','g')
+                    // 插入元素：(开始位置,0,要插入的元素)
+                    // this.letters.splice(3,0,'abc')
+
+                    // 6.sort():将数组中元素排序
+                    // this.letters.sort()
+
+                    //7.reverse():将数组中元素倒序
+                    // this.letters.reverse()
+
+                    //注意：通过索引值修改数组中元素
+                    // this.letters.splice(0,1,'bbbbb')
+                    Vue.set(this.letters,0,'bbbbb')
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>
